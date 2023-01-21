@@ -1,0 +1,7 @@
+<h2>Dashboard</h2>
+<div class="calcs-menu">
+  <a *ngFor="let line of lines" routerLink="/detail/{{line.id}}">
+    {{line.name}}
+  </a>
+</div>
+<app-calc-line-search></app-calc-line-search>

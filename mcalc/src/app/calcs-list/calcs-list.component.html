@@ -1,0 +1,23 @@
+<h2>My Calcs</h2>
+<ul class="lines">
+	<li *ngFor="let each of lines" >
+		<a routerLink="/detail/{{each.id}}">
+			<span class="badge">{{each.id}}</span> {{each.name}}
+		</a>
+		<button type="button" class="delete" title="delete line" (click)="deleteLine(each)">x</button>
+		<!-- button type="button" (click)="goBack()">go back</button -->
+		<!-- <button [class.selected]="each === selectedLine" type="button" (click)="onSelect(each)">
+			<span class="badge">{{each.id}}</span>
+			<span class="name">{{each.name}}</span>
+			</button> -->
+	</li>
+</ul>
+<div>
+  <label for="new-line">Line name: </label>
+  <input id="new-line" #lineName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="addLine(lineName.value); lineName.value=''">
+    Add line
+  </button>
+</div>
